@@ -20,12 +20,15 @@ export default class HomeScreen extends React.Component {
 
   render() {
     console.log(this.state.data);
+
+    const { navigation } = this.props;
     return (
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
+      <View>
+        <TouchableOpacity onPress={() => navigation.navigate("News")}>
+          <Text>Go to news!</Text>
+        </TouchableOpacity>
       </View>
     );
+    const styles = StyleSheet.create({});
   }
 }
-
-const styles = StyleSheet.create({});
