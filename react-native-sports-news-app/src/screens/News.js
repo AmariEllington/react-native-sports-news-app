@@ -32,7 +32,11 @@ export default class News extends Component {
     console.log(this.state.data);
     return (
       <View>
-        <FlatList renderItem={data => <NewsCard item={data} />} />
+        <FlatList
+          data={data}
+          renderItem={({ item }) => <NewsCard item={item} />}
+          keyExtractor={item => item.url}
+        />
       </View>
     );
   }
